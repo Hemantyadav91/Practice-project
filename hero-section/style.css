@@ -1,0 +1,134 @@
+/* --------------------- GLOBAL STYLING --------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.main-container {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.2rem;
+}
+
+h1 {
+    font-size: 9rem;
+}
+
+p {
+    font-size: 2.1rem;
+}
+
+a {
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --------------------- NAVIGATION BAR --------------------- */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.Logo {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.nav-links li a:link, .nav-links li a:visited {
+    padding: 1rem 2rem;
+    color: #000000;
+}
+
+.nav-links li a:hover, .nav-links li a:active {
+    text-decoration: underline black  2px;
+    text-underline-offset: 6px;
+}
+
+/* --------------------- HERO SECTION --------------------- */
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 10rem;
+    margin-top: 5rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero-image {
+    max-width: 600px;
+    width: 100%;
+}
+
+.hero-btn {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --------------------- COMPONENTS --------------------- */
+
+.btn {
+    font-size: 2.1rem;
+    padding: 1rem 2rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.btn-first {
+    background-color: #000000;
+    color: white;
+}
+
+.btn-first:hover, .btn-first:active {
+    background-color: #222121;
+    color: white;
+}
+
+.btn-second {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-second:hover, .btn-seoncd:active {
+    background-color: #ddd7d7;
+    color: #070707;
+}
