@@ -57,6 +57,7 @@ ul {
 .Logo {
     font-size: 3.2rem;
     font-weight: 700;
+    color: #000000;
     letter-spacing: -2px;
 }
 
@@ -74,6 +75,7 @@ ul {
 .nav-links li a:hover, .nav-links li a:active {
     text-decoration: underline black  2px;
     text-underline-offset: 6px;
+    transition: all 0.3s ease;
 }
 
 /* --------------------- HERO SECTION --------------------- */
@@ -123,12 +125,12 @@ ul {
     color: white;
 }
 
-.btn-second {
+.btn-second:link, .btn-second:visited {
     background-color: #ffffff;
     color: #000000;
 }
 
-.btn-second:hover, .btn-seoncd:active {
+.btn-second:hover, .btn-second:active {
     background-color: #ddd7d7;
     color: #070707;
 }
