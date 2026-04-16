@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <title>Digital Business Card</title>
+    <style>
+        /* 1. RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            min-height: 100vh;
+            background-color: #0f172a;
+            color: white;
+            /* CENTERING MAGIC */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 2. CARD SYTLING */
+        .card {
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
+        }
+
+        /* 3. PROFILE IMAGE */
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .bio {
+            color: #d3d3d3;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* . SOCIAL BUTTONS */
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: block;
+            background-color: #334155;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3b82f6;
+            transform: scale(1.02);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Business Card -->
+    <dvi class="card">
+        <!-- Placeholder for Profile Picture -->
+         <div class="profile-img">
+            <i class="fa-solid fa-user-ninja"></i>
+         </div>
+
+        <h1 class="name">Hemant Kumar Yadav</h1>
+        <p class="title">FRONTEND DEVELOPER<p>
+
+        <p class="bio">I build beautiful, responsive websites and I'm currently mastering the art of CSS and JavaScript.</p>
+        <div class="social-link">
+            <a href="" class="btn">GitHube</a>
+            <a href="" class="btn">Frontend Mentor</a>
+            <a href="" class="btn">LinkedIn</a>
+            <a href="" class="btn">Instagram</a>
+        </div>
+    </dvi>
+</body>
+
+</html>
