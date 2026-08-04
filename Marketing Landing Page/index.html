@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Landing Page</title>
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Cdnjs -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- Style Element -->
+      <style>
+        :root {
+            --primary: #4f46e5;         /* Indigo primary brand color */
+            --primary-hover: #4338ca;   /* Darker indigo on hover */
+            --accent: #06b6d4;          /* Cyan accent */
+            --dark-bg: #0f172a;        /* Slate dark background */
+            --card-bg: #1e293b;        /* Card background */
+            --text-main: #f8fafc;      /* Crisp white text */
+            --text-muted: #94a3b8;     /* Muted slate text */
+            --border-color: #334155;   /* Subtle divider border */
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            background-color: rbga(15, 23, 42, 0.9);
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 1.23rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: none;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .cta-nav-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-nav-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(6 , 182, 212, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 8vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #a5b4fc 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        .hero-action {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            padding: 16px 32px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+
+        .hero-preview {
+            width: 100%;
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0,0, 0 ,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 260px;
+        }
+
+        .dashboard-mock {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mock-bar {
+            height: 12px;
+            background-color: var(--border-color);
+            border-radius: 6px;
+        }
+
+        .mock-bar.short {width: 40%}
+        .mock-bar.accent {background-color: var(--accent); width: 75%;}
+        .mock-bar.primary {background-color: var(--primary); width: 90%;}
+
+
+        .features {
+            padding: 80px 24px;
+            background-color: #0b1120;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .features-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .feature-head h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .feature-head p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 32px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, bottom-color 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(79, 70, 229, 0.15);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Desktop Enhancement (Min-width media query) */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .hero {
+                padding: 100px 24px
+            }
+
+            .hero-action {
+                flex-direction: row;
+                justify-content:center;
+                width: auto;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+      </style>
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+     <header>
+        <div class="nav-container">
+            <a href="#cta" class="logo">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                Pulseflow
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </nav>
+
+            <a href="#cta" class="cta-nav-btn">Get Started</a>
+        </div>
+     </header>
+     <main>
+        <!-- Hero Section -->
+         <section class="hero">
+            <div class="hero-badge">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                Pulseflow 2.0 Released
+            </div>
+
+            <h1 class="hero-title">
+                Automate your workflow <span>without limits</span>
+            </h1>
+
+            <p class="hero-desc">Engineered for forward-thinking tech teams. Build, deploy, and scale intelligent web automation pipelines in minutes
+            </p>
+
+            <div class="hero-action">
+                <a href="#cta" class="btn-primary">Start 14-Day Free Trail</a>
+                <a href="#demo" class="btn-secondary">View Live Demo</a>
+            </div>
+
+            <div class="hero-preview">
+                <div class="dashboard-mock">
+                    <div class="mock-bar short"></div>
+                    <div class="mock-bar primary"></div>
+                    <div class="mock-bar accent"></div>
+                </div>
+            </div>
+         </section>
+
+         <!-- Feature section -->
+          <section class="features">
+            <div class="features-container">
+                <div class="feature-head">
+                    <h1>Everything you need to scale</h1>
+                    <p>Designed from the ground up for modern developer speeds.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Sub-millisecond execution times with edge network deployment out of the box.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Bank-Grade Security</h3>
+                        <p>End-to-end encryption for all payload transfers with SOC2 type II compliance.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3>Deep Analytics</h3>
+                        <p>Real-time telemetry and aggregated logs to spot performance bottlenecks instantly.</p>
+                    </article>
+                </div>
+            </div>
+          </section>
+     </main>
+     <footer>
+        <p>&copy; 2026 Pulseflow Inc. All rights reserved. Crafted with mobile-first principles.</p>
+     </footer>
+</body>
+
+</html>
