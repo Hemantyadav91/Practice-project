@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Landing Page</title>
+    <title>SaaS Marketing Landing Page</title>
+    <!-- Google Fonts: Plus Jakarta Sans for modern tech aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Google Font Link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome Cdnjs -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-     <!-- Style Element -->
-      <style>
+    <style>
         :root {
             --primary: #4f46e5;         /* Indigo primary brand color */
             --primary-hover: #4338ca;   /* Darker indigo on hover */
@@ -44,15 +37,16 @@
             overflow-x: hidden;
         }
 
+        /* MOBILE BASE STYLES (Default for all screens) */
         header {
             width: 100%;
-            background-color: rbga(15, 23, 42, 0.9);
             padding: 20px 24px;
-            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(8px);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .nav-container {
@@ -65,12 +59,12 @@
 
         .logo {
             display: flex;
-            gap: 10px;
             align-items: center;
-            font-size: 1.23rem;
+            gap: 10px;
+            font-size: 1.25rem;
             font-weight: 800;
-            text-decoration: none;
             color: var(--text-main);
+            text-decoration: none;
         }
 
         .logo i {
@@ -78,15 +72,15 @@
         }
 
         .nav-links {
+            display: none; /* Hidden on mobile by default */
             list-style: none;
-            display: none;
-            gap: 20px;
+            gap: 32px;
         }
-        
+
         .nav-links a {
-            font-weight: 500;
             color: var(--text-muted);
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.2s ease;
         }
 
@@ -94,41 +88,40 @@
             color: var(--text-main);
         }
 
-        .cta-nav-btn {
+        .cta-btn-nav {
             display: inline-block;
             background-color: var(--primary);
             color: white;
             padding: 10px 20px;
             border-radius: var(--radius-md);
             text-decoration: none;
-            font-size: 0.9rem;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
-        .cta-nav-btn:hover {
+        .cta-btn-nav:hover {
             background-color: var(--primary-hover);
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
-
+        /* HERO SECTION (Mobile-First Stack) */
         .hero {
+            padding: 60px 24px 80px;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 24px 80px;
             display: flex;
             flex-direction: column;
+            gap: 40px;
             align-items: center;
             text-align: center;
-            gap: 40px;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background-color: rgba(6 , 182, 212, 0.1);
+            background-color: rgba(6, 182, 212, 0.1);
             color: var(--accent);
             padding: 6px 16px;
             border-radius: 50px;
@@ -151,12 +144,12 @@
         }
 
         .hero-desc {
-            font-size: 1.1rem;
             color: var(--text-muted);
+            font-size: 1.1rem;
             max-width: 600px;
         }
 
-        .hero-action {
+        .hero-actions {
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -186,9 +179,9 @@
             padding: 16px 32px;
             border-radius: var(--radius-md);
             text-decoration: none;
-            border: 1px solid var(--border-color);
             font-weight: 600;
             text-align: center;
+            border: 1px solid var(--border-color);
             transition: background-color 0.2s ease;
         }
 
@@ -202,7 +195,7 @@
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-color);
             padding: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0,0, 0 ,0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -222,11 +215,11 @@
             border-radius: 6px;
         }
 
-        .mock-bar.short {width: 40%}
-        .mock-bar.accent {background-color: var(--accent); width: 75%;}
-        .mock-bar.primary {background-color: var(--primary); width: 90%;}
+        .mock-bar.short { width: 40%; }
+        .mock-bar.accent { background-color: var(--accent); width: 75%; }
+        .mock-bar.primary { background-color: var(--primary); width: 90%; }
 
-
+        /* FEATURES SECTION */
         .features {
             padding: 80px 24px;
             background-color: #0b1120;
@@ -238,25 +231,25 @@
             margin: 0 auto;
         }
 
-        .feature-head {
+        .section-header {
             text-align: center;
             margin-bottom: 50px;
         }
 
-        .feature-head h2 {
+        .section-header h2 {
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 12px;
         }
 
-        .feature-head p {
+        .section-header p {
             color: var(--text-muted);
             font-size: 1rem;
         }
-        
-        .feature-grid {
+
+        .features-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Single column on mobile */
             gap: 24px;
         }
 
@@ -265,7 +258,7 @@
             padding: 32px;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
-            transition: transform 0.2s ease, bottom-color 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .feature-card:hover {
@@ -296,24 +289,24 @@
             font-size: 0.95rem;
         }
 
-        /* Desktop Enhancement (Min-width media query) */
+        /* DESKTOP ENHANCEMENTS (Min-width media query) */
         @media (min-width: 768px) {
             .nav-links {
-                display: flex;
+                display: flex; /* Reveal links on desktop */
             }
 
             .hero {
-                padding: 100px 24px
+                padding: 100px 24px;
             }
 
-            .hero-action {
-                flex-direction: row;
-                justify-content:center;
+            .hero-actions {
+                flex-direction: row; /* Horizontal button layout on desktop */
+                justify-content: center;
                 width: auto;
             }
 
-            .feature-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 Equal columns on desktop */
             }
         }
 
@@ -324,14 +317,14 @@
             font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
         }
-      </style>
+    </style>
 </head>
-
 <body>
-    <!-- Header / Navigation -->
-     <header>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
         <div class="nav-container">
-            <a href="#cta" class="logo">
+            <a href="#" class="logo">
                 <i class="fa-solid fa-bolt-lightning"></i>
                 Pulseflow
             </a>
@@ -344,14 +337,15 @@
                 </ul>
             </nav>
 
-            <a href="#cta" class="cta-nav-btn">Get Started</a>
+            <a href="#cta" class="cta-btn-nav">Get Started</a>
         </div>
-     </header>
-     <main>
-        <!-- Hero Section -->
-         <section class="hero">
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
             <div class="hero-badge">
-                <i class="fa-solid fa-bolt-lightning"></i>
+                <i class="fa-solid fa-sparkles"></i>
                 Pulseflow 2.0 Released
             </div>
 
@@ -359,14 +353,16 @@
                 Automate your workflow <span>without limits</span>
             </h1>
 
-            <p class="hero-desc">Engineered for forward-thinking tech teams. Build, deploy, and scale intelligent web automation pipelines in minutes
+            <p class="hero-desc">
+                Engineered for forward-thinking tech teams. Build, deploy, and scale intelligent web automation pipelines in minutes.
             </p>
 
-            <div class="hero-action">
-                <a href="#cta" class="btn-primary">Start 14-Day Free Trail</a>
+            <div class="hero-actions">
+                <a href="#cta" class="btn-primary">Start 14-Day Free Trial</a>
                 <a href="#demo" class="btn-secondary">View Live Demo</a>
             </div>
 
+            <!-- HERO DASHBOARD MOCKUP -->
             <div class="hero-preview">
                 <div class="dashboard-mock">
                     <div class="mock-bar short"></div>
@@ -374,17 +370,17 @@
                     <div class="mock-bar accent"></div>
                 </div>
             </div>
-         </section>
+        </section>
 
-         <!-- Feature section -->
-          <section class="features">
+        <!-- FEATURES SECTION -->
+        <section class="features" id="features">
             <div class="features-container">
-                <div class="feature-head">
-                    <h1>Everything you need to scale</h1>
+                <div class="section-header">
+                    <h2>Everything you need to scale</h2>
                     <p>Designed from the ground up for modern developer speeds.</p>
                 </div>
 
-                <div class="feature-grid">
+                <div class="features-grid">
                     <article class="feature-card">
                         <div class="feature-icon">
                             <i class="fa-solid fa-bolt"></i>
@@ -392,13 +388,15 @@
                         <h3>Lightning Fast</h3>
                         <p>Sub-millisecond execution times with edge network deployment out of the box.</p>
                     </article>
+
                     <article class="feature-card">
                         <div class="feature-icon">
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
                         <h3>Bank-Grade Security</h3>
-                        <p>End-to-end encryption for all payload transfers with SOC2 type II compliance.</p>
+                        <p>End-to-end encryption for all payload transfers with SOC2 Type II compliance.</p>
                     </article>
+
                     <article class="feature-card">
                         <div class="feature-icon">
                             <i class="fa-solid fa-chart-pie"></i>
@@ -408,11 +406,12 @@
                     </article>
                 </div>
             </div>
-          </section>
-     </main>
-     <footer>
-        <p>&copy; 2026 Pulseflow Inc. All rights reserved. Crafted with mobile-first principles.</p>
-     </footer>
-</body>
+        </section>
+    </main>
 
+    <footer>
+        <p>&copy; 2026 Pulseflow Inc. All rights reserved. Crafted with mobile-first principles.</p>
+    </footer>
+
+</body>
 </html>
