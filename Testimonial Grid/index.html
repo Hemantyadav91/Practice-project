@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials Grid - CSS Grid Masterclass</title>
+    <!-- Google Fonts: Barlow Semi Condensed for crisp typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            /* Color Palette */
+            --purple-primary: #733fc8;
+            --gray-dark: #48556a;
+            --black-dark: #19202d;
+            --white-pure: #ffffff;
+            --bg-light: #ecf2f8;
+            --text-light: #cfbfef;
+            --border-highlight: #a77bf3;
+
+            /* Spacing & Borders */
+            --radius-card: 20px;
+            --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--black-dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        /* MOBILE FIRST LAYOUT (Default: 1 Column Stack) */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on phones */
+            gap: 24px;
+            max-width: 1110px;
+            width: 100%;
+        }
+
+        /* BASE TESTIMONIAL CARD */
+        .card {
+            border-radius: var(--radius-card);
+            padding: 32px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* INDIVIDUAL CARD THEMES */
+        .card-purple {
+            background-color: var(--purple-primary);
+            color: var(--white-pure);
+        }
+
+        .card-gray {
+            background-color: var(--gray-dark);
+            color: var(--white-pure);
+        }
+
+        .card-black {
+            background-color: var(--black-dark);
+            color: var(--white-pure);
+        }
+
+        .card-white {
+            background-color: var(--white-pure);
+            color: var(--black-dark);
+        }
+
+        /* CARD HEADER (USER INFO) */
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            object-fit: cover;
+        }
+
+        .card-white .user-avatar {
+            border-color: var(--purple-primary);
+        }
+
+        .user-details h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .user-details p {
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* CARD CONTENT & TYPOGRAPHY */
+        .quote-lead {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 16px;
+            z-index: 2;
+        }
+
+        .quote-body {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        /* QUOTE BACKGROUND ICON (Decorative) */
+        .bg-quote-icon {
+            position: absolute;
+            top: 0;
+            right: 40px;
+            font-size: 12rem;
+            color: rgba(255, 255, 255, 0.08);
+            line-height: 1;
+            user-select: none;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* DESKTOP GRID LAYOUT (Min-width: 992px) */
+        @media (min-width: 992px) {
+            .testimonials-grid {
+                /* 4 Equal-width columns */
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            /* CARD 1: Spans 2 Columns in Row 1 */
+            .card-1 {
+                grid-column: span 2;
+            }
+
+            /* CARD 2: Spans 1 Column in Row 1 */
+            .card-2 {
+                grid-column: span 1;
+            }
+
+            /* CARD 3 (Tall Card): Spans 1 Column across 2 Rows on the far right */
+            .card-3 {
+                grid-column: 4;
+                grid-row: 1 / span 2;
+            }
+
+            /* CARD 4: Spans 1 Column in Row 2 */
+            .card-4 {
+                grid-column: 1;
+            }
+
+            /* CARD 5: Spans 2 Columns in Row 2 */
+            .card-5 {
+                grid-column: span 2;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="testimonials-grid">
+
+        <!-- TESTIMONIAL 1 (Featured Purple - Spans 2 Cols on Desktop) -->
+        <article class="card card-purple card-1">
+            <i class="fa-solid fa-quote-right bg-quote-icon" aria-hidden="true"></i>
+            <div>
+                <header class="user-info">
+                    <img class="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Daniel Clifford">
+                    <div class="user-details">
+                        <h3>Daniel Clifford</h3>
+                        <p>Verified Graduate</p>
+                    </div>
+                </header>
+                <p class="quote-lead">I received a job offer mid-way through the course. The team helped me build a portfolio that stood out immediately.</p>
+                <p class="quote-body">"I was a complete beginner when I started. The step-by-step curriculum gave me the confidence to build real projects. The mentors were always there to guide me through tricky CSS concepts like Grid and Flexbox."</p>
+            </div>
+        </article>
+
+        <!-- TESTIMONIAL 2 (Gray Card) -->
+        <article class="card card-gray card-2">
+            <div>
+                <header class="user-info">
+                    <img class="user-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Jonathan Walters">
+                    <div class="user-details">
+                        <h3>Jonathan Walters</h3>
+                        <p>Verified Graduate</p>
+                    </div>
+                </header>
+                <p class="quote-lead">The team was incredibly supportive and kept me accountable.</p>
+                <p class="quote-body">"I started with zero coding experience. Now I work at a tech startup as a Junior Frontend Developer!"</p>
+            </div>
+        </article>
+
+        <!-- TESTIMONIAL 3 (Tall White Card - Spans 2 Rows on Desktop) -->
+        <article class="card card-white card-3">
+            <div>
+                <header class="user-info">
+                    <img class="user-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" alt="Kira Whittle">
+                    <div class="user-details">
+                        <h3>Kira Whittle</h3>
+                        <p>Verified Graduate</p>
+                    </div>
+                </header>
+                <p class="quote-lead">Such a life-changing experience. Highly recommended for anyone wanting to learn HTML, CSS, and JS.</p>
+                <p class="quote-body">"Before taking this course, I struggled with self-study and constantly felt lost in tutorial hell. Having structured mini-projects with direct mentor feedback changed everything. Learning CSS Grid and Flexbox felt effortless once I understood the underlying logic. I now build responsive landing pages in my sleep!"</p>
+            </div>
+        </article>
+
+        <!-- TESTIMONIAL 4 (White Card) -->
+        <article class="card card-white card-4">
+            <div>
+                <header class="user-info">
+                    <img class="user-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="Jeanette Harmon">
+                    <div class="user-details">
+                        <h3>Jeanette Harmon</h3>
+                        <p>Verified Graduate</p>
+                    </div>
+                </header>
+                <p class="quote-lead">An overall wonderful and rewarding experience.</p>
+                <p class="quote-body">"Thank you for the wonderful support. The project challenges helped me build a portfolio I am proud of."</p>
+            </div>
+        </article>
+
+        <!-- TESTIMONIAL 5 (Black Card - Spans 2 Cols on Desktop) -->
+        <article class="card card-black card-5">
+            <div>
+                <header class="user-info">
+                    <img class="user-avatar" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=150&auto=format&fit=crop" alt="Patrick Abrams">
+                    <div class="user-details">
+                        <h3>Patrick Abrams</h3>
+                        <p>Verified Graduate</p>
+                    </div>
+                </header>
+                <p class="quote-lead">Awesome teaching style! The mentor explains the 'why' behind every layout decision.</p>
+                <p class="quote-body">"The staff was very helpful whenever I encountered a bug or had questions about clean code practices. The mobile-first approach taught here is something I use daily in my job."</p>
+            </div>
+        </article>
+
+    </main>
+
+</body>
+</html>
